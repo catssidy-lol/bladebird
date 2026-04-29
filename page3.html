@@ -15,7 +15,6 @@
       justify-content: center;
       text-align: center;
       cursor: pointer;
-      position: relative;
 
       background: radial-gradient(circle at center, #f5f5f5, #0a0a0a);
 
@@ -28,21 +27,19 @@
       to { opacity: 1; }
     }
 
-    .angel {
+    .birds {
       position: fixed;
       inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
 
-      z-index: 1;
-      pointer-events: none;
-
-      opacity: 0.14;
-      filter: blur(2.5px) brightness(1.1) contrast(0.9);
+      opacity: 0.22;
+      filter: blur(1.5px) brightness(1.2) contrast(0.9);
       mix-blend-mode: screen;
 
       animation: float 8s ease-in-out infinite;
+      pointer-events: none;
     }
 
     @keyframes float {
@@ -56,7 +53,6 @@
       inset: 0;
       background: radial-gradient(circle, transparent 40%, rgba(0,0,0,0.35));
       pointer-events: none;
-      z-index: 1;
     }
 
     body::before {
@@ -66,11 +62,9 @@
       background: url("https://grainy-gradients.vercel.app/noise.svg");
       opacity: 0.06;
       pointer-events: none;
-      z-index: 1;
     }
 
     .container {
-      position: relative;
       z-index: 2;
       animation: floatText 6s ease-in-out infinite;
       max-width: 80%;
@@ -96,18 +90,19 @@
   </style>
 </head>
 
-<body>
-  <img class="angel" src="angel.jpg" alt="">
+<body onclick="nextPage()">
+
+  <img class="birds" src="angel.jpg" alt="Angel background">
 
   <div class="container">
     <h1>when you're in the sky, i'm hoping you'll return</h1>
   </div>
 
-   <script>
+  <script>
     function nextPage() {
       document.body.style.opacity = "0";
       setTimeout(() => {
-        window.location.href = "page4.html";
+        window.location.href = "page3.html";
       }, 600);
     }
   </script>
