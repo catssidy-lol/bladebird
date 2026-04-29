@@ -9,12 +9,11 @@
     body {
       margin: 0;
       height: 100vh;
-      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
       cursor: pointer;
+      overflow: hidden;
 
       background: radial-gradient(circle at center, #f5f5f5, #0a0a0a);
 
@@ -27,48 +26,32 @@
       to { opacity: 1; }
     }
 
-    .birds {
-      position: fixed;
-      inset: 0;
+    .wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      max-width: 90%;
+    }
+
+    .image-side {
+      width: 300px;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 4px;
+      opacity: 0.8;
+    }
+
+    .image-side img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-
-      opacity: 0.22;
-      filter: blur(1.5px) brightness(1.2) contrast(0.9);
-      mix-blend-mode: screen;
-
-      animation: float 8s ease-in-out infinite;
-      pointer-events: none;
+      filter: blur(1.5px) brightness(1.1);
     }
 
-    @keyframes float {
-      0%, 100% { transform: scale(1) translateY(0px); }
-      50% { transform: scale(1.03) translateY(-6px); }
-    }
-
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: radial-gradient(circle, transparent 40%, rgba(0,0,0,0.35));
-      pointer-events: none;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: url("https://grainy-gradients.vercel.app/noise.svg");
-      opacity: 0.06;
-      pointer-events: none;
-    }
-
-    .container {
-      z-index: 2;
+    .text-side {
+      max-width: 300px;
       animation: floatText 6s ease-in-out infinite;
-      max-width: 80%;
-      padding: 1rem;
     }
 
     @keyframes floatText {
@@ -79,24 +62,38 @@
     h1 {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
-      font-size: 1.9rem;
+      font-size: 1.6rem;
       letter-spacing: 1px;
       margin: 0;
       color: #111;
       opacity: 0.85;
-      text-shadow: 0 0 12px rgba(255,255,255,0.3);
       line-height: 1.4;
+      text-shadow: 0 0 10px rgba(255,255,255,0.25);
+    }
+
+    .grain {
+      position: fixed;
+      inset: 0;
+      background: url("https://grainy-gradients.vercel.app/noise.svg");
+      opacity: 0.05;
+      pointer-events: none;
     }
   </style>
 </head>
 
 <body onclick="nextPage()">
 
-  <img class="birds" src="angel.jpg" alt="Angel background">
+  <div class="wrapper">
+    <div class="image-side">
+      <img src="angel.jpg" alt="">
+    </div>
 
-  <div class="container">
-    <h1>when you're in the sky, i'm hoping you'll return</h1>
+    <div class="text-side">
+      <h1>when you're in the sky,<br>i'm hoping you'll return</h1>
+    </div>
   </div>
+
+  <div class="grain"></div>
 
   <script>
     function nextPage() {
