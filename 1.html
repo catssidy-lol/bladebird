@@ -27,7 +27,6 @@
       to { opacity: 1; }
     }
 
-    /* glowing birds image */
     .birds {
       position: fixed;
       inset: 0;
@@ -48,7 +47,6 @@
       50% { transform: scale(1.03) translateY(-6px); }
     }
 
-    /* soft vignette */
     body::after {
       content: "";
       position: fixed;
@@ -57,7 +55,6 @@
       pointer-events: none;
     }
 
-    /* grain */
     body::before {
       content: "";
       position: fixed;
@@ -106,12 +103,10 @@
 
 <body onclick="nextPage()">
 
-  <!-- glowing bird image -->
   <img class="birds" src="birds.jpg" alt="">
 
   <div class="container">
     <h1>i’ve come to terms, my baby is a bird</h1>
-    <p></p>
   </div>
 
   <script>
