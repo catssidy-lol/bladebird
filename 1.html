@@ -3,7 +3,6 @@
 <head>
   <title>blade bird</title>
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300&display=swap" rel="stylesheet">
 
   <style>
@@ -81,22 +80,16 @@
       font-size: 1.9rem;
       letter-spacing: 1px;
       margin: 0;
-
       color: #111;
       opacity: 0.85;
-
       text-shadow: 0 0 12px rgba(255,255,255,0.3);
     }
 
-    p {
+    .hint {
       font-family: 'Inter', sans-serif;
-      font-weight: 300;
-      font-size: 0.8rem;
-      letter-spacing: 2px;
-      margin-top: 14px;
-
-      color: #222;
-      opacity: 0.6;
+      font-size: 0.7rem;
+      opacity: 0.4;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -107,13 +100,14 @@
 
   <div class="container">
     <h1>i’ve come to terms, my baby is a bird</h1>
+    <div class="hint">click to continue</div>
   </div>
 
   <script>
     function nextPage() {
       document.body.style.opacity = 0;
       setTimeout(() => {
-        window.location.href = "page2.html";
+        window.location.href = "1.html";
       }, 600);
     }
   </script>
