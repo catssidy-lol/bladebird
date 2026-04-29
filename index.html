@@ -1,1 +1,35 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Part 2 – Weightless</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: linear-gradient(to bottom, #1e1e2f, #3a3a6a);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+  </style>
+</head>
+<body onclick="nextPage()">
+<div>
+  <h1>Weightless</h1>
+  <p>Everything feels suspended—  
+  like nothing is pulling you back down.</p>
+</div>
+<script>
+  window.onload = () => {
+    document.body.style.opacity = 1;
+  };
+  function nextPage() {
+    window.location.href = "page3.html";
+  }
+</script>
+</body>
+</html>
