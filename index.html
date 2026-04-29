@@ -2,38 +2,85 @@
 <html>
 <head>
   <title>Part 1 – bladebird</title>
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Space+Mono&display=swap" rel="stylesheet">
+
   <style>
     body {
-      background: linear-gradient(to bottom, #1e1e2f, #3a3a6a);
-      color: white;
+      /* your preferred background */
+      background: radial-gradient(circle at center, #2b2b3d, #0a0a12);
+
+      color: #cfcfe6;
       display: flex;
       align-items: center;
       justify-content: center;
       height: 100vh;
       text-align: center;
       opacity: 0;
-      transition: opacity 0.8s ease;
+      transition: opacity 1s ease;
+      cursor: pointer;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    /* subtle dark overlay (keeps it moody without killing the glow) */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.25);
+      pointer-events: none;
+    }
+
+    h1 {
+      font-family: 'Special Elite', monospace;
+      font-size: 3.5rem;
+      text-transform: lowercase;
+      letter-spacing: 4px;
+
+      color: #c8c8e0;
+      opacity: 0.8;
+
+      text-shadow:
+        0 0 3px rgba(255,255,255,0.25),
+        0 0 10px rgba(120,120,255,0.25),
+        0 0 30px rgba(80,80,200,0.2);
+
+      transform: rotate(-0.5deg);
+      filter: blur(0.35px);
+      margin: 0;
+    }
+
+    p {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      opacity: 0.4;
+      margin-top: 12px;
     }
   </style>
 </head>
 
 <body onclick="nextPage()">
 
-<div>
-  <h1>blade bird</h1>
-  <p>oklou</p>
-</div>
+  <div>
+    <h1>blade bird</h1>
+    <p> oklou</p>
+  </div>
 
-<script>
-  window.onload = () => {
-    document.body.style.opacity = 1;
-  };
+  <script>
+    window.onload = () => {
+      document.body.style.opacity = 1;
+    };
 
-  function nextPage() {
-    window.location.href = "page3.html";
-  }
-</script>
+    function nextPage() {
+      document.body.style.opacity = 0;
+      setTimeout(() => {
+        window.location.href = "page2.html";
+      }, 500);
+    }
+  </script>
 
 </body>
 </html>
